@@ -1,14 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\2-Domain\ECommerce.StockService.Domain.Core\ECommerce.StockService.Domain.Core.csproj" />
-    <ProjectReference Include="..\..\2-Domain\ECommerce.StockService.Domain.Application\ECommerce.StockService.Domain.Application.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\2-Domain\ECommerce.StockService.Domain.Core\ECommerce.StockService.Domain.Core.csproj" />
+        <ProjectReference Include="..\..\2-Domain\ECommerce.StockService.Domain.Application\ECommerce.StockService.Domain.Application.csproj" />
+    </ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.8" />
+        <PackageReference Include="MediatR" Version="11.1.0" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
 </Project>
