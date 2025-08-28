@@ -1,6 +1,8 @@
 using Asp.Versioning.ApiExplorer;
 using ECommerce.StockService.API.SwaggerConfig;
+using ECommerce.StockService.Domain.Core.Interfaces.Repositories;
 using ECommerce.StockService.Infrastructure.Data.Context;
+using ECommerce.StockService.Infrastructure.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,11 +19,13 @@ builder.Services.AddApiVersioning()
         setup.GroupNameFormat = "'v'VVV";
         setup.SubstituteApiVersionInUrl = true;
     });
-builder.Services.ConfigureOptions<ConfigureSwaggerGenOptions>();
 
+builder.Services.ConfigureOptions<ConfigureSwaggerGenOptions>();
 // Adiciona o DbContext do StockService usando PostgreSQL
 builder.Services.AddDbContext<StockServiceDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL_Estudos_Local")));
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
