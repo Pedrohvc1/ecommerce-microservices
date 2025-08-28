@@ -1,5 +1,7 @@
 using Asp.Versioning.ApiExplorer;
 using ECommerce.StockService.API.SwaggerConfig;
+using ECommerce.StockService.Infrastructure.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,10 @@ builder.Services.AddApiVersioning()
         setup.SubstituteApiVersionInUrl = true;
     });
 builder.Services.ConfigureOptions<ConfigureSwaggerGenOptions>();
+
+// Adiciona o DbContext do StockService usando PostgreSQL
+builder.Services.AddDbContext<StockServiceDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL_Estudos_Local")));
 
 var app = builder.Build();
 
