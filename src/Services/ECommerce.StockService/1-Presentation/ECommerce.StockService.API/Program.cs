@@ -31,7 +31,7 @@ var app = builder.Build();
 
 app.MapOpenApi();
 app.UseHttpsRedirection();
-
+app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
