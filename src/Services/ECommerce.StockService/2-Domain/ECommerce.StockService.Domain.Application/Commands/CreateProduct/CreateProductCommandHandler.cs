@@ -16,8 +16,13 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
         _mapper = mapper;
     }
 
-    public async Task<CreateProductCommandResponse> Handle(CreateProductCommandRequest command,
-        CancellationToken cancellationToken)
+    /// <summary>
+    /// Handle the CreateProduct command to add a new product to the repository and return the created product as a response DTO.
+    /// </summary>
+    /// <param name="command"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public async Task<CreateProductCommandResponse> Handle(CreateProductCommandRequest command, CancellationToken cancellationToken)
     {
         try
         {

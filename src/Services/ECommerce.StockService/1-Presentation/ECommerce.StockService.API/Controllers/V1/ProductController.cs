@@ -1,4 +1,5 @@
 using ECommerce.StockService.Domain.Application.Commands.CreateProduct;
+using ECommerce.StockService.Domain.Application.Queries.GetAllCatalog;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.StockService.API.Controllers.V1;
@@ -13,15 +14,21 @@ public class ProductController : BaseApiController
     /// Returns HTTP 200 (OK) status with the result of the product creation.
     /// </returns>
     [HttpPost]
-    public async Task<IActionResult> CreateAsync([FromBody] CreateProductCommandRequest command)
+    public async Task<IActionResult> CreateProductAsync([FromBody] CreateProductCommandRequest command)
     {
         return Ok(await Mediator.Send(command));
     }
 
-    
-    // [HttpGet]
-    // public async Task<IActionResult> GetAllCatalogAsync()
-    // {
-    //     return await Mediator.Send();
-    // }
+    /// <summary>
+    /// Retrieves all products in the catalog.
+    /// </summary>
+    /// <returns>
+    /// Returns HTTP 200 (OK) status with a list of all products in the catalog.
+    /// </returns>
+    [HttpGet]
+    public async Task<IActionResult> GetAllCatalogAsync()
+    {
+        var result = await Mediator.Send(new GetAllCatalogQueryRequest());
+        return Ok(result);
+    }
 }

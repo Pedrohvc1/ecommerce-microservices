@@ -1,6 +1,7 @@
 using Asp.Versioning.ApiExplorer;
 using ECommerce.StockService.API.SwaggerConfig;
 using ECommerce.StockService.Domain.Application.Commands.CreateProduct;
+using ECommerce.StockService.Domain.Application.Queries.GetAllCatalog;
 using ECommerce.StockService.Domain.Core.Interfaces.Repositories;
 using ECommerce.StockService.Infrastructure.Data.Context;
 using ECommerce.StockService.Infrastructure.Data.Repositories;
@@ -40,6 +41,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 // Handlers
 builder.Services.AddScoped<IRequestHandler<CreateProductCommandRequest, CreateProductCommandResponse>, CreateProductCommandHandler>();
+builder.Services.AddScoped<IRequestHandler<GetAllCatalogQueryRequest, IEnumerable<GetAllCatalogQueryResponse>>, GetAllCatalogQueryHandler>();
 
 var app = builder.Build();
 
