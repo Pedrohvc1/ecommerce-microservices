@@ -29,7 +29,8 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
         {
             var product = _mapper.Map<Product>(command);
             await _productRepository.AddAsync(product);
-            return _mapper.Map<CreateProductCommandResponse>(product);
+            var result = _mapper.Map<CreateProductCommandResponse>(product);
+            return new CreateProductCommandResponse(true, "Produto cadastrado com sucesso.");
         }
         catch (Exception e)
         {
