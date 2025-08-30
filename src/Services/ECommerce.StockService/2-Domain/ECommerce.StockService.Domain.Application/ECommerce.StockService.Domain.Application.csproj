@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\..\4-CrossCutting\ECommerce.StockService.CrossCutting.Exceptions\ECommerce.StockService.CrossCutting.Exceptions.csproj" />
     <ProjectReference Include="..\ECommerce.StockService.Domain.Core\ECommerce.StockService.Domain.Core.csproj" />
   </ItemGroup>
 

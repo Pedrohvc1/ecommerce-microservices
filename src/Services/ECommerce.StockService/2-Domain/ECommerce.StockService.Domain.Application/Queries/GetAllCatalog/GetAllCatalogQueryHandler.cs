@@ -1,4 +1,6 @@
+using System.Net;
 using AutoMapper;
+using ECommerce.StockService.CrossCutting.Exceptions.Exceptions;
 using ECommerce.StockService.Domain.Core.Interfaces.Repositories;
 using MediatR;
 
@@ -33,7 +35,7 @@ public class
         catch (Exception e)
         {
             Console.WriteLine(e);
-            throw;
+            throw new Exception("Erro ao listar os produtos do catálogo", e);
         }
     }
 }

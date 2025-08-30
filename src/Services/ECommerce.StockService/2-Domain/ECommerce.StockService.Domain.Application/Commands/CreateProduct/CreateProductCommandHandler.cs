@@ -1,4 +1,5 @@
 using AutoMapper;
+using ECommerce.StockService.CrossCutting.Exceptions.Exceptions;
 using ECommerce.StockService.Domain.Core.Entities;
 using ECommerce.StockService.Domain.Core.Interfaces.Repositories;
 using MediatR;
@@ -33,7 +34,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
         catch (Exception e)
         {
             Console.WriteLine(e);
-            throw new Exception($"Erro no cadastro do produto {command.Name}");
+            throw new BadRequestException($"Erro no cadastro do produto {command.Name}");
         }
     }
 }
