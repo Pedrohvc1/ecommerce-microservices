@@ -1,6 +1,6 @@
 using Asp.Versioning.ApiExplorer;
 using ECommerce.StockService.API.SwaggerConfig;
-using ECommerce.StockService.Domain.Application.Commands.Products;
+using ECommerce.StockService.Domain.Application.Commands.CreateProduct;
 using ECommerce.StockService.Domain.Core.Interfaces.Repositories;
 using ECommerce.StockService.Infrastructure.Data.Context;
 using ECommerce.StockService.Infrastructure.Data.Repositories;

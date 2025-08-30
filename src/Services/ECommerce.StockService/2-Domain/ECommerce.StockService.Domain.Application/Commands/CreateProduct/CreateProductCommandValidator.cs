@@ -1,3 +1,4 @@
+using ECommerce.StockService.Domain.Application.Commands.CreateProduct;
 using FluentValidation;
 
 namespace ECommerce.StockService.Domain.Application.Commands.Products;

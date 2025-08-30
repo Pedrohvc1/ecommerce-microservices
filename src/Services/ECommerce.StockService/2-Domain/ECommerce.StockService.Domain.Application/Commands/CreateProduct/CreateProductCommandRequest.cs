@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace ECommerce.StockService.Domain.Application.Commands.Products;
+namespace ECommerce.StockService.Domain.Application.Commands.CreateProduct;
 
 public class CreateProductCommandRequest : IRequest<CreateProductCommandResponse>
 {

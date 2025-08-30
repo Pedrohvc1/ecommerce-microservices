@@ -1,10 +1,9 @@
 using AutoMapper;
-using MediatR;
-using ECommerce.StockService.Domain.Core.Interfaces.Repositories;
 using ECommerce.StockService.Domain.Core.Entities;
+using ECommerce.StockService.Domain.Core.Interfaces.Repositories;
+using MediatR;
 
-
-namespace ECommerce.StockService.Domain.Application.Commands.Products;
+namespace ECommerce.StockService.Domain.Application.Commands.CreateProduct;
 
 public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, CreateProductCommandResponse>
 {
