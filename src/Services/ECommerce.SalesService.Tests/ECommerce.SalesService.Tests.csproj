@@ -19,15 +19,13 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="AutoMapper" Version="13.0.1"/>
+        <PackageReference Include="AutoMapper" Version="15.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\2-Domain\ECommerce.SalesService.Domain.Application\ECommerce.SalesService.Domain.Application.csproj"/>
-        <ProjectReference Include="..\..\2-Domain\ECommerce.SalesService.Domain.Core\ECommerce.SalesService.Domain.Core.csproj"/>
-        <ProjectReference Include="..\..\4-CrossCutting\ECommerce.SalesService.CrossCutting.Exceptions\ECommerce.SalesService.CrossCutting.Exceptions.csproj"/>
         <ProjectReference Include="..\ECommerce.SalesService.Domain.Application\ECommerce.SalesService.Domain.Application.csproj" />
         <ProjectReference Include="..\ECommerce.SalesService.Domain.Core\ECommerce.SalesService.Domain.Core.csproj" />
+        <ProjectReference Include="..\ECommerce.SalesService.CrossCutting.Exceptions\ECommerce.SalesService.CrossCutting.Exceptions.csproj" />
     </ItemGroup>
 
     <ItemGroup>
